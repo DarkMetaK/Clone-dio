@@ -1,3 +1,4 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '../../components/Button'
@@ -5,7 +6,6 @@ import Header from '../../components/Header'
 
 import { Container, TextContent, Title, TitleHighLight } from './styles';
 import Banner from '../../assets/banner.png';
-
 
 function Home() {
 

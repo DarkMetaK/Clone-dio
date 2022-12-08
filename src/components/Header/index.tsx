@@ -4,9 +4,12 @@ import Button from '../Button';
 
 import { BuscarInputContainer, Container, Input, Menu, MenuRight, Row, UserPicture, Wrapper } from "./styles";
 
-import logo from '../../assets/logo-dio.png'
+import logo from '../../assets/logo-dio.png';
 
-function Header({autenticado}) {
+import { IHeader } from './types';
+import React from 'react';
+
+function Header({autenticado} : IHeader) {
 
   const navigate = useNavigate();
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MdEmail, MdLock } from 'react-icons/md';
 import { useForm } from 'react-hook-form';
@@ -11,6 +12,8 @@ import { api } from '../../services/api';
 
 import { Column, Container, CriarText, EsqueciText, Row, SubtitleLogin, Title, TitleLogin, Wrapper } from './styles';
 
+import { FormDat } from './types';
+
 function Login() {
 
   const schema = yup.object({
@@ -18,14 +21,14 @@ function Login() {
     password: yup.string().min(3, 'No mínimo 3 caracteres').required('Campo Obrigatório')
   }).required();
 
-  const { control, handleSubmit, formState: {errors, isValid} } = useForm({
+  const { control, handleSubmit, formState: {errors} } = useForm<FormDat>({
     resolver: yupResolver(schema),
     mode: 'onChange'
   });
 
   const navigate = useNavigate();
 
-  const onSubmit = async (formData) => {
+  const onSubmit = async (formData: FormDat) => {
     try{
       const { data } = await api.get(`users?email=${formData.email}&senha=${formData.password}`);
       if(data.length === 1) {

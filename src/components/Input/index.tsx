@@ -1,8 +1,10 @@
+import React from "react"
 import { Controller } from "react-hook-form"
 
 import { ErrorText, GeneralContainer, IconContainer, InputContainer, InputText } from "./styles"
+import { IInput } from "./types"
 
-function Input({leftIcon, name, errorMessage, control, ...rest}) {
+function Input({leftIcon, name, errorMessage, control, ...rest}: IInput) {
   return (
     <>
     <GeneralContainer>

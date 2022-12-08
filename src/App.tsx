@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -8,6 +10,7 @@ import Home from './pages/home';
 import Login from './pages/login';
 import Feed from './pages/feed';
 import Cadastro from './pages/cadastro';
+
 
 function App() {
   return (

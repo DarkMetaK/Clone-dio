@@ -9,6 +9,9 @@ import Input from '../../components/Input'
 
 import { Column, Consentimento, ConsentimentoText, Container, HighLight, SubtitleLogin, Title, TitleLogin, Wrapper } from './styles'
 import Button from '../../components/Button';
+import React from 'react';
+
+import { RegisterData } from './types';
 
 function Cadastro() {
 
@@ -18,12 +21,12 @@ function Cadastro() {
     password: yup.string().min(3, 'A senha deve possuir ao menos 3 caracteres').required('Esse campo é obrigatório')
   })
 
-  const {control, handleSubmit, formState: {errors}} = useForm({
+  const {control, handleSubmit, formState: {errors}} = useForm<RegisterData>({
     resolver: yupResolver(schema),
     mode: 'onChange'
   });
 
-  async function onSubmit(data) {
+  async function onSubmit(data: RegisterData) {
     console.log(data)
   }
 
