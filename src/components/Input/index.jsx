@@ -1,11 +1,23 @@
-import { IconContainer, InputContainer, InputText } from "./styles"
+import { Controller } from "react-hook-form"
 
-function Input({leftIcon, name, ...rest}) {
+import { ErrorText, GeneralContainer, IconContainer, InputContainer, InputText } from "./styles"
+
+function Input({leftIcon, name, errorMessage, control, ...rest}) {
   return (
-    <InputContainer>
-      {leftIcon ? <IconContainer>{leftIcon}</IconContainer> : null}
-      <InputText {...rest}/>
-    </InputContainer>
+    <>
+    <GeneralContainer>
+      <InputContainer>
+        {leftIcon ? <IconContainer>{leftIcon}</IconContainer> : null}
+        <Controller 
+          name={name}
+          control={control}
+          rules={{required: true}}
+          render={({field}) => <InputText {...field} {...rest}/>}
+        />
+      </InputContainer>
+      {errorMessage ? <ErrorText>{errorMessage}</ErrorText> : null}      
+    </GeneralContainer>
+    </>
   )
 }
 

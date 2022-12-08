@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
+export const Container = styled.div`
     width: 100%;
     max-width: 80%;
     margin: 120px auto 0 auto;
@@ -9,23 +9,6 @@ export const Container = styled.main`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-`
-
-export const Wrapper = styled.div`
-    max-width: 300px;
-    width: 100%;
-    margin: 0 auto;
-`
-
-export const Column = styled.div`
-    flex: 1;
-`
-
-export const Row = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
 `
 
 export const Title = styled.h2`
@@ -41,14 +24,24 @@ export const Title = styled.h2`
     color: #fff;
 `
 
+export const Wrapper = styled.div`
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+`
+
+export const Column = styled.div`
+    flex: 1;
+`
+
 export const TitleLogin = styled.p`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 2em;
+    font-size: 1.5em;
     margin-bottom: 10px;
-    margin-left: 0;
     line-height: 1.3em;
+    margin-left: 0 px;
 `
 
 export const SubtitleLogin = styled.p`
@@ -61,26 +54,34 @@ export const SubtitleLogin = styled.p`
     color: #ffffff80;
 `
 
-export const EsqueciText = styled.p`
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: .875em;
-    line-height: 1.3em;
-
-    color: #e5e044;
+export const Consentimento = styled.div`
+    margin-top: 20px;
 `
 
-export const CriarText = styled.button`
+export const ConsentimentoText = styled.p`
     font-family: 'Open Sans';
     font-style: normal;
-    font-weight: 700;
-    font-size: .875em;
-    color: #E23DD7;
+    font-weight: 400;
+    font-size: 0.875em;
+    margin-bottom: 35px;
+    line-height: 1.3em;
+`
+
+export const HighLight = styled.button`
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
 
     background-color: transparent;
     border: none;
     padding: 0;
     margin: 0;
+    margin-left: 5px;
+    color: #e5e044;
     cursor: pointer;
+
+    &::hover {
+        color: #e5e044;
+    }
 `

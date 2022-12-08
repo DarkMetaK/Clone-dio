@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const GeneralContainer = styled.div`
+    margin-bottom: 20px;
+`
+
 export const InputContainer = styled.div`
     max-width: 275px;
     width: 100%;
@@ -7,7 +11,6 @@ export const InputContainer = styled.div`
 
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
 `
 
 export const IconContainer = styled.div`
@@ -20,4 +23,9 @@ export const InputText = styled.input`
     width: 100%;
     border: none;
     height: 30px;
+`
+
+export const ErrorText = styled.p`
+    color: #FF0000;
+    font-size: .75em;
 `

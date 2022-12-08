@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import Button from '../Button';
 
 import { BuscarInputContainer, Container, Input, Menu, MenuRight, Row, UserPicture, Wrapper } from "./styles";
@@ -5,6 +7,9 @@ import { BuscarInputContainer, Container, Input, Menu, MenuRight, Row, UserPictu
 import logo from '../../assets/logo-dio.png'
 
 function Header({autenticado}) {
+
+  const navigate = useNavigate();
+
   return (
     <Wrapper>
       <Container>
@@ -25,9 +30,9 @@ function Header({autenticado}) {
             <UserPicture src='https://avatars.githubusercontent.com/u/77026784?v=4' />
           ) : (
             <>
-            <MenuRight href="#">Home</MenuRight>
-            <Button title="Entrar"/>
-            <Button title="Cadastrar"/>
+            <MenuRight href="/">Home</MenuRight>
+            <Button title="Entrar" onClick={() => navigate('/login')}/>
+            <Button title="Cadastrar" onClick={() => navigate('/cadastro')}/>
             </>
           )}
         </Row>
