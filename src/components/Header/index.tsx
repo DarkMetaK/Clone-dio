@@ -6,12 +6,12 @@ import { BuscarInputContainer, Container, Input, Menu, MenuRight, Row, UserPictu
 
 import logo from '../../assets/logo-dio.png';
 
-import React, { useContext } from 'react';
-import { AuthContext } from '../../context/auth';
+import React from 'react';
+import { useAuth } from '../../hooks/userAuth';
 
 function Header() {
 
-  const { user, handleSignOut } = useContext(AuthContext);
+  const { user, handleSignOut } = useAuth();
 
   const navigate = useNavigate();
 

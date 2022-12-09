@@ -3,7 +3,6 @@ import { MdEmail, MdLock } from 'react-icons/md';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '../../components/Button'
@@ -13,7 +12,7 @@ import Input from '../../components/Input';
 import { Column, Container, CriarText, EsqueciText, Row, SubtitleLogin, Title, TitleLogin, Wrapper } from './styles';
 
 import { FormDat } from './types';
-import { AuthContext } from '../../context/auth';
+import { useAuth } from '../../hooks/userAuth';
 
 
 function Login() {
@@ -28,7 +27,7 @@ function Login() {
     mode: 'onChange'
   });
 
-  const { handleLogin } = useContext(AuthContext);
+  const { handleLogin } = useAuth();
 
   const onSubmit = async (formData: FormDat) => {
     handleLogin(formData)
