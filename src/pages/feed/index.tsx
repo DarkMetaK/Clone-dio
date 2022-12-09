@@ -8,7 +8,7 @@ import { Column, Container, Title, TitleHighLight } from './styles';
 function Feed() {
   return (
     <>
-      <Header autenticado={true}/>
+      <Header />
       <Container>
         <Column flex={3}>
           <Title>Feed</Title>

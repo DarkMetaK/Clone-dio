@@ -55,13 +55,15 @@ export const Menu = styled.a`
 `
 
 export const MenuRight = styled.a`
-    font-family: 'Open Sans',
-    font-style: normal;
-    font-size: 0.75em;
-    line-height: 1.5em;
-    color: #fff;
-    margin-right: 12px;
-    text-decoration: none;
+    a {
+        font-family: 'Open Sans',
+        font-style: normal;
+        font-size: 0.75em;
+        line-height: 1.5em;
+        color: #fff;
+        margin-right: 12px;
+        text-decoration: none;        
+    }
 `
 
 export const UserPicture = styled.img`
@@ -69,6 +71,7 @@ export const UserPicture = styled.img`
     height: 32px;
     border-radius: 17px;
     border: 2px solid #fff;
+    margin-right: 10px;
 `
 
 export const Input = styled.input`

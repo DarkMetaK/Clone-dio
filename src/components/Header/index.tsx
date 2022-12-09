@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Button from '../Button';
 
@@ -6,10 +6,12 @@ import { BuscarInputContainer, Container, Input, Menu, MenuRight, Row, UserPictu
 
 import logo from '../../assets/logo-dio.png';
 
-import { IHeader } from './types';
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../context/auth';
 
-function Header({autenticado} : IHeader) {
+function Header() {
+
+  const { user, handleSignOut } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -17,8 +19,10 @@ function Header({autenticado} : IHeader) {
     <Wrapper>
       <Container>
         <Row>
-          <img src={logo} alt="Logo da dio" />
-          {autenticado ? (
+          <Link to='/'>
+            <img src={logo} alt="Logo da dio" />
+          </Link>
+          {user.id ? (
             <>
             <BuscarInputContainer>
               <Input type="text" placeholder='Buscar...'/>
@@ -29,11 +33,16 @@ function Header({autenticado} : IHeader) {
           ) : null}
         </Row>
         <Row>
-          {autenticado ? (
-            <UserPicture src='https://avatars.githubusercontent.com/u/77026784?v=4' />
+          {user.id ? (
+            <>
+            <Link to='/feed'>
+              <UserPicture src='https://avatars.githubusercontent.com/u/77026784?v=4' />
+            </Link>
+            <Link to='/' onClick={handleSignOut}>Sair</Link>
+            </>
           ) : (
             <>
-            <MenuRight href="/">Home</MenuRight>
+            <MenuRight><Link to='/'>Home</Link></MenuRight>
             <Button title="Entrar" onClick={() => navigate('/login')}/>
             <Button title="Cadastrar" onClick={() => navigate('/cadastro')}/>
             </>
