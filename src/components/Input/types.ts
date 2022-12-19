@@ -6,4 +6,9 @@ export interface IInput extends InputHTMLAttributes<HTMLInputElement>{
     control?: any;
     leftIcon?: React.ReactNode;
     errorMessage?: string | null;
+    widthVariant?: string;
+}
+
+export interface IInputStyled {
+    widthVariant?: string;
 }

@@ -1,26 +1,39 @@
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import Button from '../Button';
+import { useAuth } from '../../hooks/userAuth';
 
 import { BuscarInputContainer, Container, Input, Menu, MenuRight, Row, UserPicture, Wrapper } from "./styles";
-
-import logo from '../../assets/logo-dio.png';
-
-import React from 'react';
-import { useAuth } from '../../hooks/userAuth';
+import HeaderHamburguer from './HeaderHamburguer';
 
 function Header() {
 
   const { user, handleSignOut } = useAuth();
+  const [screenSize, getDimension] = useState(window.innerWidth)
+
+  const setDimension = () => {
+    getDimension(window.innerWidth)
+  }
+  
+  useEffect(() => {
+    window.addEventListener('resize', setDimension)
+
+    return(() => {
+      window.removeEventListener('resize', setDimension)
+    })
+  }, [screenSize])
 
   const navigate = useNavigate();
 
   return (
-    <Wrapper>
+    <>
+    {screenSize > 992 ? (
+      <Wrapper>
       <Container>
         <Row>
           <Link to='/'>
-            <img src={logo} alt="Logo da dio" />
+            <img src='https://hermes.digitalinnovation.one/assets/diome/logo.svg' alt="Logo da dio" width={150}/>
           </Link>
           {user.id ? (
             <>
@@ -42,14 +55,21 @@ function Header() {
             </>
           ) : (
             <>
-            <MenuRight><Link to='/'>Home</Link></MenuRight>
+            <MenuRight>
+              <Link to='/'>Home</Link>
+              <span>Catálogo</span>
+              <span>Planos</span>
+              <span>Para Empresas</span>
+            </MenuRight>
             <Button title="Entrar" onClick={() => navigate('/login')}/>
             <Button title="Cadastrar" onClick={() => navigate('/cadastro')}/>
             </>
           )}
         </Row>
       </Container>
-    </Wrapper>
+      </Wrapper>
+    ) : <HeaderHamburguer />}
+    </>
   )
 }
 

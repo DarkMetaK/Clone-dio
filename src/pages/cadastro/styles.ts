@@ -9,6 +9,16 @@ export const Container = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        margin: 24px auto;
+        align-items: flex-start;
+    }
+
+    @media (max-width: 577px) {
+        align-items: center;
+    }
 `
 
 export const Title = styled.h2`
@@ -22,16 +32,31 @@ export const Title = styled.h2`
     line-height: 1.3em;
 
     color: #fff;
+
+    @media (max-width: 768px) {
+        font-size: 1.5em;
+        max-width: 100%
+    }
+    @media (max-width: 577px) {
+        display: none;
+    }
 `
 
 export const Wrapper = styled.div`
     max-width: 300px;
     width: 100%;
     margin: 0 auto;
+
+    @media (max-width: 577px) {
+        max-width: 100%;
+    }
 `
 
 export const Column = styled.div`
     flex: 1;
+    @media (max-width: 577px) {
+        width: 100%;
+    }
 `
 
 export const TitleLogin = styled.p`
@@ -42,6 +67,10 @@ export const TitleLogin = styled.p`
     margin-bottom: 10px;
     line-height: 1.3em;
     margin-left: 0 px;
+
+    @media (max-width: 768px) {
+        margin-top: 24px;
+    }
 `
 
 export const SubtitleLogin = styled.p`
@@ -81,7 +110,7 @@ export const HighLight = styled.button`
     color: #e5e044;
     cursor: pointer;
 
-    &::hover {
-        color: #e5e044;
+    &:hover {
+        text-decoration: underline;
     }
 `

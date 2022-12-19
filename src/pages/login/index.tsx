@@ -14,7 +14,6 @@ import { Column, Container, CriarText, EsqueciText, Row, SubtitleLogin, Title, T
 import { FormDat } from './types';
 import { useAuth } from '../../hooks/userAuth';
 
-
 function Login() {
 
   const schema = yup.object({
@@ -22,7 +21,7 @@ function Login() {
     password: yup.string().min(3, 'No mínimo 3 caracteres').required('Campo Obrigatório')
   }).required();
 
-  const { control, handleSubmit, formState: {errors} } = useForm<FormDat>({
+  const { control, handleSubmit, formState: {errors, isValid} } = useForm<FormDat>({
     resolver: yupResolver(schema),
     mode: 'onChange'
   });
@@ -46,7 +45,7 @@ function Login() {
         </Column>
         <Column>
         <Wrapper>
-          <TitleLogin>Faça seu Login</TitleLogin>
+          <TitleLogin>Já tem cadastro?</TitleLogin>
           <SubtitleLogin>Faça seu login e make the change._</SubtitleLogin>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Input
@@ -56,6 +55,7 @@ function Login() {
               type='email'
               leftIcon={<MdEmail />}
               errorMessage={errors.email ? errors.email.message : null}
+              widthVariant='100%'
             />
             <Input
               control={control}
@@ -64,12 +64,13 @@ function Login() {
               type='password'
               leftIcon={<MdLock />}
               errorMessage={errors.password ? errors.password.message : null}
+              widthVariant='100%'
             />
             <Button
               title='Entrar'
               variant='secondary'
-              // onClick={handleClickSignIn}
-              />
+              disabled={!isValid}
+            />
           </form>
           <Row>
             <EsqueciText>Esqueci minha senha</EsqueciText>

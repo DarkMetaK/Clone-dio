@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { IInputStyled } from "./types";
 
 export const GeneralContainer = styled.div`
     margin-bottom: 20px;
 `
 
-export const InputContainer = styled.div`
-    max-width: 275px;
+export const InputContainer = styled.div<IInputStyled>`
+    max-width: ${({widthVariant}) => widthVariant ? widthVariant : '275px'};
     width: 100%;
     border-bottom: 1px solid #3B3450;
 

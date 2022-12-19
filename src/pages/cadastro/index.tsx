@@ -21,7 +21,7 @@ function Cadastro() {
     password: yup.string().min(3, 'A senha deve possuir ao menos 3 caracteres').required('Esse campo é obrigatório')
   })
 
-  const {control, handleSubmit, formState: {errors}} = useForm<RegisterData>({
+  const {control, handleSubmit, formState: {errors, isValid}} = useForm<RegisterData>({
     resolver: yupResolver(schema),
     mode: 'onChange'
   });
@@ -55,6 +55,7 @@ function Cadastro() {
                 control={control}
                 errorMessage={errors.name ? errors.name.message : null}
                 leftIcon={<MdPerson />}
+                widthVariant='100%'
                 />
                 <Input
                 type='email'
@@ -63,6 +64,7 @@ function Cadastro() {
                 control={control}
                 errorMessage={errors.email ? errors.email.message : null}
                 leftIcon={<MdEmail />}
+                widthVariant='100%'
                 />
                 <Input
                 type='password'
@@ -71,10 +73,12 @@ function Cadastro() {
                 control={control}
                 errorMessage={errors.password ? errors.password.message : null}
                 leftIcon={<MdLock />}
+                widthVariant='100%'
                 />
                 <Button
                     title='Criar minha conta'
                     variant='secondary'
+                    disabled={!isValid}
                 />
             </form>
             <Consentimento>

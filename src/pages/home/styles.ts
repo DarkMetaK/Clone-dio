@@ -9,6 +9,11 @@ export const Container = styled.main`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        margin: 24px auto;
+    }
 `
 
 export const Title = styled.h2`
@@ -22,6 +27,11 @@ export const Title = styled.h2`
     line-height: 1.3em;
 
     color: #fff;
+
+    @media (max-width: 768px) {
+        margin: 24px auto;
+        text-align: center;
+    }
 `
 
 export const TitleHighLight = styled.span`
@@ -39,4 +49,13 @@ export const TextContent = styled.p`
     line-height: 1.5em;
 
     color: #fff;
+`
+
+export const ButtonContainer = styled.div`
+    width: 50%;
+    margin-top: 3em;
+
+    @media (max-width: 768px) {
+        margin: 0 auto;
+    }
 `
