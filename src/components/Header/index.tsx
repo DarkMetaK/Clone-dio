@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Button from '../Button';
 import { useAuth } from '../../hooks/userAuth';
 
-import { BuscarInputContainer, Container, MenuRight, Row, UserPicture, Wrapper } from "./styles";
+import { BuscarInputContainer, Container, ExitButton, MenuRight, Row, UserPicture, Wrapper } from "./styles";
 import HeaderHamburguer from './HeaderHamburguer';
 
 function Header() {
@@ -32,24 +32,28 @@ function Header() {
       <Wrapper>
       <Container>
         <Row>
-          <Link to='/'>
-            <img src='https://hermes.digitalinnovation.one/assets/diome/logo.svg' alt="Logo da dio" width={150}/>
-          </Link>
           {user.id ? (
             <>
+            <Link to='/feed'>
+              <img src='https://hermes.digitalinnovation.one/assets/diome/logo.svg' alt="Logo da dio" width={150}/>
+            </Link>
             <BuscarInputContainer
               type="text"
               placeholder='Pesquisar...'
             />
             <MenuRight>
-              <span>Play</span>
+              <Link to="/feed">Play</Link>
               <span>Global</span>
               <span>English4Tech</span>
               <span>Artigos</span>
               <span>Rooms</span>
             </MenuRight>
             </>
-          ) : null}
+          ) : 
+          <Link to='/'>
+            <img src='https://hermes.digitalinnovation.one/assets/diome/logo.svg' alt="Logo da dio" width={150}/>
+          </Link>
+        }
         </Row>
         <Row>
           {user.id ? (
@@ -58,7 +62,9 @@ function Header() {
               <UserPicture src='https://avatars.githubusercontent.com/u/77026784?v=4' />
             </Link>
             
-            <Link to='/' onClick={handleSignOut}>Sair</Link>
+            <ExitButton>
+              <Link to='/' onClick={handleSignOut}>Sair</Link>
+            </ExitButton>
             </>
           ) : (
             <>

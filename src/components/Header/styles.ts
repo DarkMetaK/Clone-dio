@@ -77,5 +77,25 @@ export const UserPicture = styled.img`
     height: 32px;
     border-radius: 17px;
     border: 2px solid #fff;
-    margin-right: 10px;
+    margin-right: 24px;
+`
+
+export const ExitButton = styled.span`
+    a {
+        font-decoration: none;
+        font-family: 'Open Sans',
+        font-style: normal;
+        font-size: 1em;
+        line-height: 1.5em;
+        color: #fff;
+        text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+        
+        transition: color 0.2s ease-out 0s;
+    
+        &:hover{
+            color: #E4105D;
+        }
+    }
 `

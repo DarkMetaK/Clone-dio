@@ -42,16 +42,40 @@ function HeaderHamburguer() {
                 <img src='https://hermes.digitalinnovation.one/assets/diome/logo.svg' alt="Logo da dio" width={250}/>
 
                 <ul className='options'>
+
+                  {user.id? (
+                    <>
+                    <li><Link to='/feed'>Play</Link></li>
+                    <li>Global</li>
+                    <li>English4Tech</li>
+                    <li>Artigos</li>
+                    <li>Rooms</li>
+                    </>
+                  )
+                  : (
+                  <>
                   <li><Link to='/'>Home</Link></li>
                   <li>Catálogo</li>
                   <li>Planos</li>
                   <li>Para Empresas</li>
+                  </>
+                  )}
                 </ul>
                 
-                <div className='buttons'>
-                  <Button title="Cadastrar" onClick={() => navigate('/cadastro')} variant='empty-purple'/>
-                  <Button title="Entrar" onClick={() => navigate('/login')} variant='purple'/>
-                </div>
+                {user.id? (
+                  <div className='buttons'>
+                    <Button title="Sair" onClick={() => {
+                      navigate('/')
+                      handleSignOut()
+                    }} variant='purple'/>
+                  </div>
+                ) 
+                : (
+                  <div className='buttons'>
+                    <Button title="Cadastrar" onClick={() => navigate('/cadastro')} variant='empty-purple'/>
+                    <Button title="Entrar" onClick={() => navigate('/login')} variant='purple'/>
+                  </div>
+                )}
                 
                 <Dialog.Close asChild>
                   <ButtonHamburguer className='closeButton'>
