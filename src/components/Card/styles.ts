@@ -23,6 +23,7 @@ export const Content = styled.div`
 export const UserInfo = styled.div`
     display: flex;
     margin-bottom: 12px;
+    align-items: center;
 
     div {
         margin-left: 12px;
@@ -48,9 +49,9 @@ export const UserInfo = styled.div`
 `
 
 export const UserPicture = styled.img`
-    width: 32px;
-    height: 32px;
-    border-radius: 17px;
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
     border: 3px solid #fff;
 `
 
@@ -82,9 +83,9 @@ export const HasInfo = styled.div`
         font-family: 'Open Sans',
         font-weight: 700;
         font-style: normal;
-        font-size: 1.125em;
+        font-size: 0.75em;
         line-height: 1.5em;
-        color: #fff;
+        color: rgb(85,85,85);
     }
 
     p {

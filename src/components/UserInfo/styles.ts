@@ -5,12 +5,13 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     margin-bottom: 24px;
+    align-items: center;
 `
 
 export const UserPicture = styled.img`
-    width: 32px;
-    height: 32px;
-    border-radius: 17px;
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
     border: 3px solid #fff;
     margin-right: 12px;
 `
@@ -25,7 +26,8 @@ export const NameText = styled.div`
 `
 
 export const Progress = styled.div<IProgress>`
-    width: 180px;
+    max-width: 180px;
+    width: 100%;
     height: 6px;
     background-color: #fff;
     border-radius: 3px;
@@ -41,4 +43,12 @@ export const Progress = styled.div<IProgress>`
         border-radius: 3px;
         background-color: #23DD7A;
     }
+`
+export const LevelTag = styled.span`
+    font-size: 0.75em;
+    color: white;
+    background-color: #23DD7A;
+    padding: 2px 5px;
+    border-radius: 10px;
+    display: inline;
 `

@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Button from '../Button';
 import { useAuth } from '../../hooks/userAuth';
 
-import { BuscarInputContainer, Container, Input, Menu, MenuRight, Row, UserPicture, Wrapper } from "./styles";
+import { BuscarInputContainer, Container, MenuRight, Row, UserPicture, Wrapper } from "./styles";
 import HeaderHamburguer from './HeaderHamburguer';
 
 function Header() {
@@ -37,11 +37,17 @@ function Header() {
           </Link>
           {user.id ? (
             <>
-            <BuscarInputContainer>
-              <Input type="text" placeholder='Buscar...'/>
-            </BuscarInputContainer>
-            <Menu>Live Code</Menu>
-            <Menu>Global</Menu>
+            <BuscarInputContainer
+              type="text"
+              placeholder='Pesquisar...'
+            />
+            <MenuRight>
+              <span>Play</span>
+              <span>Global</span>
+              <span>English4Tech</span>
+              <span>Artigos</span>
+              <span>Rooms</span>
+            </MenuRight>
             </>
           ) : null}
         </Row>
@@ -51,6 +57,7 @@ function Header() {
             <Link to='/feed'>
               <UserPicture src='https://avatars.githubusercontent.com/u/77026784?v=4' />
             </Link>
+            
             <Link to='/' onClick={handleSignOut}>Sair</Link>
             </>
           ) : (

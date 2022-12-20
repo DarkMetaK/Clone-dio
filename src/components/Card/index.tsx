@@ -17,7 +17,7 @@ function Card() {
             </UserInfo>
             <PostInfo>
                 <h4>Projeto para curso de React</h4>
-                <p>Projeto feito para o curso de React do bootcamp... <strong>Saiba mais</strong></p>
+                <p>Projeto feito para o curso de React do bootcamp, e aprimorado posteriormente por meio de... <strong>Saiba mais</strong></p>
             </PostInfo>
             <HasInfo>
                 <h4>#HTML #CSS #JavaScript</h4>
