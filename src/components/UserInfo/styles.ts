@@ -16,6 +16,15 @@ export const UserPicture = styled.img`
     margin-right: 12px;
 `
 
+export const BigHeadContainer = styled.span`
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    border: 3px solid #fff;
+    margin-right: 12px;
+    background-color: #85C5E5;
+`
+
 export const NameText = styled.div`
     font-family: 'Open Sans',
     font-weight: 700;

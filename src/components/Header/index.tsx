@@ -4,12 +4,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import Button from '../Button';
 import { useAuth } from '../../hooks/userAuth';
 
-import { BuscarInputContainer, Container, ExitButton, MenuRight, Row, UserPicture, Wrapper } from "./styles";
+import { BigHeadContainer, BuscarInputContainer, Container, ExitButton, MenuRight, Row, UserPicture, Wrapper } from "./styles";
 import HeaderHamburguer from './HeaderHamburguer';
+import { BigHead } from '@bigheads/core';
 
 function Header() {
 
-  const { user, handleSignOut } = useAuth();
+  const { isLoggedIn, handleSignOut, user } = useAuth();
   const [screenSize, getDimension] = useState(window.innerWidth)
 
   const setDimension = () => {
@@ -32,11 +33,11 @@ function Header() {
       <Wrapper>
       <Container>
         <Row>
-          {user.id ? (
+          <Link to='/'>
+            <img src='https://hermes.digitalinnovation.one/assets/diome/logo.svg' alt="Logo da dio" width={150}/>
+          </Link>
+          {isLoggedIn && (
             <>
-            <Link to='/feed'>
-              <img src='https://hermes.digitalinnovation.one/assets/diome/logo.svg' alt="Logo da dio" width={150}/>
-            </Link>
             <BuscarInputContainer
               type="text"
               placeholder='Pesquisar...'
@@ -49,17 +50,15 @@ function Header() {
               <span>Rooms</span>
             </MenuRight>
             </>
-          ) : 
-          <Link to='/'>
-            <img src='https://hermes.digitalinnovation.one/assets/diome/logo.svg' alt="Logo da dio" width={150}/>
-          </Link>
-        }
+          )}
         </Row>
         <Row>
-          {user.id ? (
+          {isLoggedIn ? (
             <>
             <Link to='/feed'>
-              <UserPicture src='https://avatars.githubusercontent.com/u/77026784?v=4' />
+              {user.email === 'matporto03@gmail.com' ? 
+              <UserPicture src='https://avatars.githubusercontent.com/u/77026784?v=4' /> :
+              <BigHeadContainer><BigHead /></BigHeadContainer>}
             </Link>
             
             <ExitButton>

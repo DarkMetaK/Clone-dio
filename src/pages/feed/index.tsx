@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { BigHead } from '@bigheads/core';
+import { useAuth } from '../../hooks/userAuth';
+
 import Header from '../../components/Header';
 import Card from '../../components/Card';
 import UserInfo from '../../components/UserInfo';
 
 import { AccountInfo, Column, Container, Programs, Title, TitleHighLight, TitleProgram } from './styles';
 import CourseProgram from '../../components/CourseProgram';
+import { IPost } from '../../types/post';
 
 function Feed() {
+
+  const { user, loadPosts } = useAuth();
+
+  const [posts, setPosts] = useState<Array<IPost> | undefined>(undefined)
+  
+  async function load():Promise<void>{
+    setPosts(await loadPosts())
+  }
+
+  useEffect(() => {load()}, [])
+
   return (
     <>
       <Header />
@@ -18,8 +33,11 @@ function Feed() {
             <UserInfo
               limiteXp={9557}
               percentual={60} 
-              nome="Matheus Porto" 
-              imagem="https://avatars.githubusercontent.com/u/77026784?v=4"
+              nome={user.name}
+              imagem={user.email === 'matporto03@gmail.com' ?
+                "https://avatars.githubusercontent.com/u/77026784?v=4" :
+                <BigHead />
+              }
               nivel={11}
             />
           </AccountInfo>
@@ -43,9 +61,18 @@ function Feed() {
 
         <Column flex={3}>
           <Title>Feed</Title>
-          <Card />
-          <Card />
-          <Card />
+          {posts ? posts.map((post) => 
+            <Card 
+              author={post.author}
+              content={post.content}
+              date={post.date}
+              likes={post.likes}
+              tags={post.tags}
+              title={post.title}
+              id={post.id}
+              key={post.id}
+            />
+          ) : <h1>Carregando.......</h1>}
         </Column>
         <Column flex={1}>
           <AccountInfo>
@@ -61,26 +88,26 @@ function Feed() {
             <UserInfo
               limiteXp={3920}
               percentual={80} 
-              nome="Matheus Porto" 
-              imagem="https://avatars.githubusercontent.com/u/77026784?v=4"
+              nome="Pablo Henrique" 
+              imagem={<BigHead />}
             />
             <UserInfo
               limiteXp={3920}
               percentual={75} 
-              nome="Matheus Porto" 
-              imagem="https://avatars.githubusercontent.com/u/77026784?v=4"
+              nome="Mariana Escobar" 
+              imagem={<BigHead />}
             />
             <UserInfo
               limiteXp={3920}
               percentual={40} 
-              nome="Matheus Porto" 
-              imagem="https://avatars.githubusercontent.com/u/77026784?v=4"
+              nome="John Doe" 
+              imagem={<BigHead />}
             />
             <UserInfo
               limiteXp={3920}
               percentual={25} 
-              nome="Matheus Porto" 
-              imagem="https://avatars.githubusercontent.com/u/77026784?v=4"
+              nome="Martin" 
+              imagem={<BigHead />}
             />
           </AccountInfo>
         </Column>

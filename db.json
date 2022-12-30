@@ -1,6 +1,45 @@
 {
   "users": [
-      {"id": 1, "name": "Matheus", "email": "matporto03@gmail.com", "senha": "123456"},
-      {"id": 2, "name": "Pablo", "email": "pablohdev@gmail.com", "senha": "123456"}
+    {
+      "name": "Matheus Porto",
+      "email": "matporto03@gmail.com",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "name": "Pablo Henrique",
+      "email": "pabloHenrique@gmail.com",
+      "password": "123456",
+      "id": 2
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Projeto para curso React",
+      "author": "Matheus Porto",
+      "content": "Projeto desenvolvido durante o bootcamp de React da Digital Innovation One. Consiste em ...",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "TypeScript"
+      ],
+      "likes": 16,
+      "date": "16/07/2022"
+    },
+    {
+      "id": 2,
+      "title": "Como criar um web hook",
+      "author": "Pablo Henrique",
+      "content": "No React podemos desenvolver hooks personalizados, de uma forma ...",
+      "tags": [
+        "React",
+        "TypeScript"
+      ],
+      "likes": 21,
+      "date": "12/12/2022"
+    }
   ]
 }

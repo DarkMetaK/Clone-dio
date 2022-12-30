@@ -80,6 +80,16 @@ export const UserPicture = styled.img`
     margin-right: 24px;
 `
 
+export const BigHeadContainer = styled.span`
+    display:block;
+    width: 32px;
+    height: 32px;
+    border-radius: 17px;
+    border: 2px solid #fff;
+    margin-right: 24px;
+    background-color: #85C5E5;
+`
+
 export const ExitButton = styled.span`
     a {
         font-decoration: none;

@@ -14,7 +14,7 @@ import './styles.css';
 
 function HeaderHamburguer() {
 
-  const { user, handleSignOut } = useAuth();
+  const { isLoggedIn, handleSignOut } = useAuth();
 
   const navigate = useNavigate();
 
@@ -43,7 +43,7 @@ function HeaderHamburguer() {
 
                 <ul className='options'>
 
-                  {user.id? (
+                  {isLoggedIn ? (
                     <>
                     <li><Link to='/feed'>Play</Link></li>
                     <li>Global</li>
@@ -62,7 +62,7 @@ function HeaderHamburguer() {
                   )}
                 </ul>
                 
-                {user.id? (
+                {isLoggedIn ? (
                   <div className='buttons'>
                     <Button title="Sair" onClick={() => {
                       navigate('/')

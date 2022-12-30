@@ -55,6 +55,14 @@ export const UserPicture = styled.img`
     border: 3px solid #fff;
 `
 
+export const BigHeadContainer = styled.span`
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    border: 3px solid #fff;
+    background-color: #85C5E5;
+`
+
 export const PostInfo = styled.div`
     margin-bottom: 12px;
 

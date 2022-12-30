@@ -12,8 +12,11 @@ import Button from '../../components/Button';
 import React from 'react';
 
 import { RegisterData } from './types';
+import { useAuth } from '../../hooks/userAuth'
 
 function Cadastro() {
+
+  const { handleCreateAccount } = useAuth();
 
   const schema = yup.object({
     name: yup.string().required('Esse campo é obrigatório'),
@@ -27,7 +30,7 @@ function Cadastro() {
   });
 
   async function onSubmit(data: RegisterData) {
-    console.log(data)
+    handleCreateAccount(data);
   }
 
   const navigate = useNavigate();
