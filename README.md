@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
 
-## Available Scripts
+  <a href="https://github.com/DarkMetaK/clone-dio">
+    <img src="https://hermes.digitalinnovation.one/public/components/commons/dio/logo-dio-bootcamp.svg" alt="Logo" width="160" height="80">
+  </a>
 
-In the project directory, you can run:
+  <h3 align="center">Clone DIO</h3>
 
-### `npm start`
+  <p align="center">
+    Site clone da Digital Innovation One, desenvolvido com React e TypeScript
+  </p>
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Sumário</summary>
+  <ol>
+    <li>
+      <a href="#sobre">Sobre</a>
+      <ul>
+        <li><a href="#tecnologias">Tecnologias</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#como-rodar-o-projeto">Como rodar o projeto</a>
+      <ul>
+        <li><a href="#credenciais">Credenciais</a></li>
+      </ul>
+    </li>
+    <li><a href="#melhorias">Melhorias</a></li>
+    <li><a href="#contato">Contato</a></li>
+    <li><a href="#agradecimentos">Agradecimentos</a></li>
+  </ol>
+</details>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- ABOUT THE PROJECT -->
+## Sobre
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[![Product Name Screen Shot][product-screenshot]](https://darkmetak-dio.netlify.app/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Esse site foi desenvolvido durante a trilha de React Developer da plataforma Digital Innovation One, como uma forma de apresentar e trabalhar com diversos conceitos como:
+* Componentização
+* Estilização
+* Roteamento
+* Hooks
+* Context API
+* Tipagem
+* Requisições HTTP
+* Validações de formulários
 
-### `npm run eject`
+Para a simulação do back-end foi utilizado um arquivo JSON, que gera uma api fake através do json-server.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Tecnologias
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[![React][React.js]][React-url]<br>
+[![TypeScript][TypeScript.js]][TypeScript-url]
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p align="right">(<a href="#readme-top">Retornar ao topo</a>)</p>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<!-- GETTING STARTED -->
+## Como rodar o projeto
 
-## Learn More
+É possível acessar o front-end estático do site pelo link: https://darkmetak-dio.netlify.app/
+<br><strong>Obs:</strong> Como é necessário realizar o login para acessar a rota do feed, não é possível visualizá-la na hospedagem em questão<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1 - Clone o repositório
+```sh
+git clone https://github.com/DarkMetaK/clone-dio.git
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2 - Instale as dependências
+```sh
+npm install
+```
 
-### Code Splitting
+3 - Execute o servidor do front-end
+```sh
+npm run start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4 - Execute o servidor do back-end
+```sh
+npm run api
+```
 
-### Analyzing the Bundle Size
+### Credenciais
+Para realizar a simulação de login, você pode criar uma conta nova, ou utilizar os seguintes dados:
+* E-mail: matporto03@gmail.com
+* Senha: 123456
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<p align="right">(<a href="#readme-top">Retornar ao topo</a>)</p>
 
-### Making a Progressive Web App
+## Melhorias
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- [x] Adicionar Responsividade
+- [x] Aprimorar estilização
+- [x] Adicionar persistência de login
+- [x] Aprimorar fake api
 
-### Advanced Configuration
+<p align="right">(<a href="#readme-top">Retornar ao topo</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<!-- CONTACT -->
+## Contato
 
-### Deployment
+Matheus Porto - [LinkedIn](https://www.linkedin.com/in/matheusport0/) - matporto03@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Link Repositório: [https://github.com/DarkMetaK/clone-dio](https://github.com/DarkMetaK/clone-dio)
 
-### `npm run build` fails to minify
+<p align="right">(<a href="#readme-top">Retornar ao topo</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- ACKNOWLEDGMENTS -->
+## Agradecimentos
+
+* [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
+* [Img Shields](https://shields.io)
+* [React Icons](https://react-icons.github.io/react-icons/search)
+* [Json Server](https://www.npmjs.com/package/json-server)
+* [Big Heads](https://bigheads.io/)
+* [Styled Components](https://styled-components.com/)
+
+<p align="right">(<a href="#readme-top">Retornar ao topo</a>)</p>
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[product-screenshot]: public/dio-image.jpg
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[TypeScript.js]: https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=for-the-badge
+[TypeScript-url]: https://www.typescriptlang.org/
