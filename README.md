@@ -125,6 +125,8 @@ Link Repositório: [https://github.com/DarkMetaK/clone-dio](https://github.com/D
 * [Json Server](https://www.npmjs.com/package/json-server)
 * [Big Heads](https://bigheads.io/)
 * [Styled Components](https://styled-components.com/)
+* [React Hook Form](https://react-hook-form.com/)
+* [React Router](https://reactrouter.com/en/main)
 
 <p align="right">(<a href="#readme-top">Retornar ao topo</a>)</p>
 
